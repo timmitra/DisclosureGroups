@@ -17,4 +17,5 @@ struct Country: Identifiable {
   let id = UUID()
   var name: String
   var animals: [Animals]
+  var expandMe = true
 }
