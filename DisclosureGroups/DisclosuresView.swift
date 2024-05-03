@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DisclosuresView: View {
+  @State private var expandMe = true
   @State private var myList: [Country] =
   [Country(
     name: "USA",
@@ -46,7 +47,8 @@ struct DisclosuresView: View {
     var body: some View {
       List {
         ForEach(myList) { oneCountry in
-          DisclosureGroup {
+          DisclosureGroup(
+            isExpanded: $expandMe) {
             ForEach(oneCountry.animals) { oneAnimal in
               Text("\(oneAnimal.name) \(oneAnimal.weight)")
             }
